@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\web\management_controller;
+use App\Http\Controllers\web\user_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('login', function () {
+return view('screens/auth/login');
+});
+
+Route::get('exit', function () {
+    if (session()->has('user_id')) {
+        session()->pull('user_id');
+        session()->pull('user_object');
+        return redirect('/');
+    }
+});
+
+Route::get('register', function () {
+return view('screens/auth/register');
+});
+
+Route::POST('login_check', [user_controller::class, 'login'])->name('login_check');
+Route::POST('registration_check', [user_controller::class, 'registration'])->name('registration_check');
+
+
+// Route::post('login_check', function () {
+// return "get data from the form";
+// });
+
+
+Route::get('dashboard', [management_controller::class, 'dashboard'])->name('dashboard.home');
+Route::get('companyorder/{id}', [management_controller::class, 'companyorder'])->name('dashboard.companyorder');
+Route::get('companyorder_delete/{id}', [management_controller::class, 'deleteorder'])->name('dashboard.companyorder.delete');
+Route::get('companyorder_deliver/{id}', [management_controller::class, 'deliverorder'])->name('dashboard.companyorder.deliver');
+
+// home_dashboard.blade

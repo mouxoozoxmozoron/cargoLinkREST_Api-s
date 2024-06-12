@@ -33,6 +33,7 @@ public function register(UserRegistrationRequest $request) {
         $photo_string = $userData['profile_image'];
         $profile_photo_url = $this->storeBase64File($photo_string, 'Files/profile_photo');
         $userData['profile_image'] = $profile_photo_url;
+        $userData['user_type_id'] =3;
 
         // Create the user
         $user = User::create($userData);

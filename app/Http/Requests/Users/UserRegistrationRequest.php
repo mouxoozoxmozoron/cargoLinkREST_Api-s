@@ -32,7 +32,7 @@ class UserRegistrationRequest extends FormRequest
             'phone_number' => 'required|digits_between:10,12|numeric|unique:users,phone_number',
             'password' => 'string|required|',
             'profile_image' => 'nullable',
-            'user_type_id' => 'required'
+            'user_type_id' => 'nullable'
 
         ];
     }
@@ -48,3 +48,4 @@ class UserRegistrationRequest extends FormRequest
         ];
     }
 }
+
