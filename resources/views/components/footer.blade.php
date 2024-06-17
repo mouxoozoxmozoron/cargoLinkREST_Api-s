@@ -63,11 +63,12 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
+                            <i class="fas fa-gem me-3"></i>CARGO MATCHING CO.LTD
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
+                            Our platform connects users with cargo transportation companies, streamlining the process of
+                            finding and booking reliable transportation services. Users can easily match with suitable
+                            companies, place orders, and track their shipments.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -79,17 +80,15 @@
                             Products
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Angular</a>
+                            <a href="#!" class="text-reset">Cargo matching</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">React</a>
+                            <a href="#!" class="text-reset">Order tracking</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Vue</a>
+                            <a href="#!" class="text-reset">cargo management</a>
                         </p>
-                        <p>
-                            <a href="#!" class="text-reset">Laravel</a>
-                        </p>
+
                     </div>
                     <!-- Grid column -->
 
@@ -100,16 +99,16 @@
                             Useful links
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Pricing</a>
+                            <a href="https://aru.ac.tz" class="text-reset">ARU</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Settings</a>
+                            <a href="https://onlineradiobox.com/tz/eku/?cs=tz.eku&played=1" class="text-reset">EKU</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Orders</a>
+                            <a href="#!" class="text-reset">SUDOKU</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Help</a>
+                            <a href="#!" class="text-reset">moux</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -118,13 +117,13 @@
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p><i class="fas fa-home me-3"></i> Kinondon Mk.j370</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            info@example.com
+                            japhethmanyama@gmail.com
                         </p>
-                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                        <p><i class="fas fa-phone me-3"></i> + 255 752496183</p>
+                        <p><i class="fas fa-print me-3"></i> + 255 676496183</p>
                     </div>
                     <!-- Grid column -->
                 </div>
@@ -135,8 +134,8 @@
 
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="https://aru.ac.tz">aru</a>
         </div>
         <!-- Copyright -->
     </footer>

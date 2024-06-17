@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Order;
+use App\Traits\FileTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class order_tracking extends Controller
 {
+    use FileTrait;
     //  update to confirm the orderreceiver status
     public function Confirm_order(Request $request, $order_id)
     {
@@ -105,6 +108,55 @@ class order_tracking extends Controller
                 'nessage' => $e->getMessage(),
                 'error' => 'there was an error while order positioning',
             ]);
+        }
+    }
+
+    public function verify_payment(REQUEST $req)
+    {
+        try {
+            DB::beginTransaction();
+            $receipt_image = $req->receipt_image;
+            $order_id = $req->order_id;
+
+            $order = Order::find($order_id);
+
+            if (!$order) {
+                return response()->json(
+                    [
+                        'message' => 'Order not found.',
+                    ],
+                    404,
+                );
+            }
+
+            // Check if there's an existing receipt image
+            if ($order->receipt_image) {
+                // Delete the existing receipt image from storage
+                Storage::delete($order->receipt_image);
+            }
+
+            $receipt_image_string = $req->receipt_image;
+            $receipt_image_url = $this->storeBase64File($receipt_image_string, 'Files/receipt_image');
+
+            $order->receipt_image = $receipt_image_url;
+            $order->status = 1;
+            $order->save();
+            DB::commit();
+
+            return response()->json(
+                [
+                    'message' => 'Payment verified',
+                ],
+                201,
+            );
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(
+                [
+                    'error' => $e->getMessage(),
+                ],
+                500,
+            );
         }
     }
 }

@@ -26,7 +26,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @if (!session('user_id'))
-                                <li><a class="dropdown-item" href="login">Login</a></li>
+                                <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                             @endif
                             @if (session('user_id'))
                                 <li><a class="dropdown-item" href="dashboard">Company</a></li>

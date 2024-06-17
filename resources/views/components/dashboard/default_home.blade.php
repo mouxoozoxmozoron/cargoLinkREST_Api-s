@@ -1,23 +1,23 @@
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.btn-more').forEach(function (button) {
-        button.addEventListener('click', function (event) {
-            event.preventDefault();
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn-more').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
 
-            // Retrieve company data from data attributes
-            var name = this.getAttribute('data-name');
-            var category = this.getAttribute('data-category');
-            var routes = this.getAttribute('data-routes');
-            var location = this.getAttribute('data-location');
-            var banktype = this.getAttribute('data-banktype');
-            var bankacc = this.getAttribute('data-bankacc');
-            var contact = this.getAttribute('data-contact');
-            var logoUrl = this.getAttribute('data-logo-url');
+                // Retrieve company data from data attributes
+                var name = this.getAttribute('data-name');
+                var category = this.getAttribute('data-category');
+                var routes = this.getAttribute('data-routes');
+                var location = this.getAttribute('data-location');
+                var banktype = this.getAttribute('data-banktype');
+                var bankacc = this.getAttribute('data-bankacc');
+                var contact = this.getAttribute('data-contact');
+                var logoUrl = this.getAttribute('data-logo-url');
 
-            // Display SweetAlert2 modal with company details
-            Swal.fire({
-                title: name,
-                html: `
+                // Display SweetAlert2 modal with company details
+                Swal.fire({
+                    title: name,
+                    html: `
                     <div>
                         <p><strong>Location:</strong> ${location}</p>
                         <p><strong>Category:</strong> ${category}</p>
@@ -27,19 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p><strong>Routes:</strong> ${routes}</p>
                     </div>
                 `,
-                imageUrl: logoUrl,
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Company Logo',
-                showCloseButton: true,
-                focusConfirm: false,
-                confirmButtonText: 'Close',
-                // cancelButtonText: 'More Info',
-                cancelButtonAriaLabel: 'More Info',
+                    imageUrl: logoUrl,
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Company Logo',
+                    showCloseButton: true,
+                    focusConfirm: true,
+                    confirmButtonText: 'Close',
+                    // cancelButtonText: 'More Info',
+                    cancelButtonAriaLabel: 'More Info',
+                });
             });
         });
     });
-});
 </script>
 
 <div>
@@ -65,32 +65,33 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div class="col">
                                 <div class="card h-100">
                                     <a href="{{ route('dashboard.companyorder', ['id' => $usercompany->id]) }}">
-                                        <img src="{{ asset('storage/' . $usercompany->agent_logo) }}"  class="card-img-top" alt="...">
+                                        <img src="{{ asset('storage/' . $usercompany->agent_logo) }}" class="card-img-top"
+                                            alt="...">
 
                                     </a>
 
                                     <div class="card-body">
-                                        <h5 class="card-title">{{$usercompany -> name}}</h5>
-                                        <span
-                                        class="text-secondary fs-7">{{ $usercompany->company_category }}
-                                    </span><br>
-                                        <span
-                                        class="text-secondary fs-7">{{ $usercompany->routes }}
-                                    </span>
-                                    <button type="button" class="btn btn-link btn-more"
-                                    data-name="{{ $usercompany->name }}"
-                                    data-location="{{ $usercompany->location }}"
-                                    data-category="{{ $usercompany->company_category }}"
-                                    data-routes="{{ $usercompany->routes }}"
-                                    data-contact="{{ $usercompany->contact }}"
-                                    data-email="{{ $usercompany->email }}"
-                                    data-banktype="{{ $usercompany->bank_type }}"
-                                    data-bankacc="{{ $usercompany->bank_acount_number }}"
-                                    data-logo-url="{{ asset('storage/' . $usercompany->agent_logo) }}">
-                                More
-                            </button>
-                        </div>
-                        </div>
+                                        <h5 class="card-title">{{ $usercompany->name }}</h5>
+                                        <span class="text-secondary fs-7">{{ $usercompany->company_category }}
+                                        </span><br>
+                                        <span class="text-secondary fs-7">{{ $usercompany->routes }}
+                                        </span>
+                                        <button type="button" class="btn btn-link btn-more"
+                                            data-name="{{ $usercompany->name }}"
+                                            data-location="{{ $usercompany->location }}"
+                                            data-category="{{ $usercompany->company_category }}"
+                                            data-routes="{{ $usercompany->routes }}"
+                                            data-contact="{{ $usercompany->contact }}"
+                                            data-email="{{ $usercompany->email }}"
+                                            data-banktype="{{ $usercompany->bank_type }}"
+                                            data-bankacc="{{ $usercompany->bank_acount_number }}"
+                                            data-logo-url="{{ asset('storage/' . $usercompany->agent_logo) }}">
+                                            More
+                                        </button>
+                                    </div>
+                                    <div class="companyupdatebtn"><a href="href="{{ route('dashboard.company.edit', ['id' => $usercompany->id]) }}""
+                                        class="btn btn-secondary">update</a></div>
+                                </div>
                             </div>
                         @endforeach
                     @endif

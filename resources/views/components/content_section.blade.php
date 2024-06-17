@@ -8,7 +8,7 @@
                 for product transportation
             </p>
         </div>
-        <button type="button" class="btn btn-success">Try our service</button>
+        <a href="{{route('login')}}" class="btn btn-success">Try our service</a>
     </div>
 
 </div>

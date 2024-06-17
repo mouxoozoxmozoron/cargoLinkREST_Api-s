@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('login', function () {
 return view('screens/auth/login');
-});
+})->name('login');
 
 Route::get('exit', function () {
     if (session()->has('user_id')) {
@@ -30,7 +30,7 @@ Route::get('exit', function () {
         session()->pull('user_object');
         return redirect('/');
     }
-});
+})->name("exit");
 
 Route::get('register', function () {
 return view('screens/auth/register');
@@ -49,5 +49,6 @@ Route::get('dashboard', [management_controller::class, 'dashboard'])->name('dash
 Route::get('companyorder/{id}', [management_controller::class, 'companyorder'])->name('dashboard.companyorder');
 Route::get('companyorder_delete/{id}', [management_controller::class, 'deleteorder'])->name('dashboard.companyorder.delete');
 Route::get('companyorder_deliver/{id}', [management_controller::class, 'deliverorder'])->name('dashboard.companyorder.deliver');
+Route::get('company_edit/{id}', [management_controller::class, 'editorder'])->name('dashboard.company.edit');
 
 // home_dashboard.blade

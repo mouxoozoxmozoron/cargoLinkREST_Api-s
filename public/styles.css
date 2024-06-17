@@ -61,6 +61,11 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 
 
 /* dashboard styles */
+.profile_photo_on_model
+{
+width: 150px;
+height: 150px;
+}
 .my_account_box
 {
 margin-top: 4rcap;
@@ -161,4 +166,14 @@ color: red;
 {
 display: inline-block;
 width: auto;
+}
+.companyupdatebtn
+{
+    padding: 10px;
+    align-items: center;
+}
+.companyupdatebtn>a{
+border-radius: 2px;
+color: white;
+cursor: pointer;
 }

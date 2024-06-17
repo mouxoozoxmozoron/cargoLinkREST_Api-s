@@ -37,6 +37,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('driver', driver_controller::class);
     Route::resource('user', user_controller::class);
     Route::POST('Confirm_order/{order_id}', [order_tracking::class, 'Confirm_order']);
+    Route::POST('verify_payment/{order_id}', [order_tracking::class, 'verify_payment']);
     Route::POST('position_order/{order_id}', [order_tracking::class, 'position_order']);
     Route::resource('agent', transportation_agent_controller::class);
     // Route::resource('Comments', CommentController::class);

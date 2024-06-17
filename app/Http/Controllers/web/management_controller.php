@@ -56,4 +56,9 @@ class management_controller extends Controller
         }
         return redirect()->back()->with('error', 'Order not found');
     }
+
+    public function editorder(REQUEST $req)
+    {
+        return response()->json('here from company editing page');
+    }
 }
